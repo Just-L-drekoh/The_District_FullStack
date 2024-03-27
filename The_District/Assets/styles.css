@@ -1,0 +1,124 @@
+body {
+    background-color: #191916;
+    z-index: 0;
+}
+
+
+.nav-link {
+    color: rgb(244, 242, 242);
+    font-weight: bolder;
+    font-size: 2.5vh;
+
+}
+
+
+ul {
+    align-items: center;
+}
+
+
+h2 {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+}
+
+h5 {
+    color: black;
+    justify-content: center;
+    display: flex;
+}
+
+h2,
+h3,
+p {
+    justify-content: center;
+    display: flex;
+    color: beige;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2vh;
+    margin: 2%;
+    text-align: center;
+}
+
+h1,
+h4 {
+    color: beige;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.bi-search {
+    color: beige;
+}
+
+
+.form-search {
+
+    opacity: 0.4;
+}
+
+
+.card {
+    background-color: #191916;
+
+}
+
+.card_cat {
+    border-radius: 25%;
+    border: beige solid 3px;
+    width: fit-content;
+    height: 300px;
+
+}
+
+.img_cat {
+    border-radius: 25%;
+    border: beige solid 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+h6 {
+    color: beige;
+    justify-content: center;
+    display: flex;
+}
+
+
+.background_cat {
+
+    background-image: url("/Assets/images_the_district/fond-cat-index.jpg");
+}
+
+
+
+label {
+    color: beige;
+
+}
+
+
+#mentions {
+    background-color: rgba(0, 0, 0, 0.226);
+    width: 1920px;
+    height: 568px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.error {
+    color: red;
+}
+
+#message {
+    color: red;
+}
