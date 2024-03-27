@@ -79,12 +79,12 @@ public function getLibelle() {
         echo "<div class='card mx-auto col-10 col-md-12'>
         <div class='row no-gutters'>
             <div class='col-md-6'>
-                <img class='card-img-top img-fluid' src='".$this->getImage()."' alt='Image de ".$this->getLibelle()."'>
+                <img class='card-img-top img-fluid w-75' src='".$this->getImage()."' alt='Image de ".$this->getLibelle()."'>
             </div>
             <div class='col-md-6'>
                 <div class='card-body'>
                     <h1 class='title'>".$categorie->getLibelle()." / ".$this->getLibelle()."</h1>
-                    <div class='text' style='max-height: 200px; overflow-y: auto;'>".$this->getDescription()."</div>
+                    <div class='text' style='max-height: 200px; color : white; overflow-y: auto;'>".$this->getDescription()."</div>
                     <h6 class='subtitle mb-2'>Prix: ".$this->getPrix()."</h6>
                     <a href='commande.php?id=".$this->getId()."' class='btn btn-primary btn-sm'>Commandez</a>
                 </div>
