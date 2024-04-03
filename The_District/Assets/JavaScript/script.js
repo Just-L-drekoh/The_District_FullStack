@@ -94,13 +94,14 @@ $(document).ready(function () {
         }
 
 
-        const address = $("#adress").val().trim();
-        const error_address = $("#error_adress");
+        const adress = $("#adress").val().trim();
+        const error_adress = $("#error_adress");
 
-        if (address === "") {
-            error_address.html("<p class='error'>Veuillez entrez une Adresse Valide.</p>");
-            isValid = false; // Met à false si la validation échoue        } else {
-            error_address.html("");
+        if (adress === "") {
+            error_adress.html("<p class='error'>Veuillez entrez une Adresse Valide.</p>");
+            isValid = false;
+        } else {
+            error_adress.html("");
         }
 
         // Phone Check

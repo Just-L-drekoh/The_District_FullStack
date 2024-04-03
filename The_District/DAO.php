@@ -7,7 +7,7 @@ require_once('classes/classe_plat.php');
 // Fonction de connexion à la base de données
 function connect_database () {
     try {
-        $conn = new PDO("mysql:host=localhost;dbname=the_district", "admin", "lolo2002");
+        $conn = new PDO("mysql:host=localhost;dbname=the_district", "admin", "Afpa1234");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         return $conn;
