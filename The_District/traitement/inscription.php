@@ -7,7 +7,37 @@ require_once('../DAO.php');
 if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"])) {
     $nom_prenom = $_POST["name"];
     $email = $_POST["email"];
-    $mot_de_passe = password_hash($_POST["password"], PASSWORD_DEFAULT); 
+    $password = $_POST["password"];
+
+    // Validation des données
+    $errors = [];
+
+    // Vérifier si le nom et prénom est vide
+    if(empty($nom_prenom)) {
+        $errors[] = "Le nom et prénom sont obligatoires.";
+    }
+
+    // Vérifier si l'email est vide et s'il a un format valide
+    if(empty($email)) {
+        $errors[] = "L'email est obligatoire.";
+    } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "L'email n'est pas valide.";
+    }
+
+    // Vérifier si le mot de passe est vide ou trop court
+    if(empty($password) || strlen($password) < 6) {
+        $errors[] = "Le mot de passe doit contenir au moins 6 caractères.";
+    }
+
+    // Si des erreurs sont présentes, les afficher et rediriger
+    if(!empty($errors)) {
+        $_SESSION['message'] = implode("<br>", $errors);
+        header("Location: ../inscription_page.php");
+        exit();
+    }
+
+    // Hasher le mot de passe
+    $mot_de_passe = password_hash($password, PASSWORD_DEFAULT); 
 
     // Vérifier si l'e-mail existe déjà dans la base de données
     $stmt = $conn->prepare("SELECT id FROM utilisateur WHERE email = ?");
@@ -33,7 +63,7 @@ if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["password"]))
     }
 }
 
-// Si une erreur est survenue ou si les champs n'ont pas été envoyés, redirigez vers la page de profil
+// Redirection vers la page d'inscription en cas d'erreur ou de champs manquants
 header("Location: ../inscription_page.php");
-    exit();
+exit();
 ?>
